@@ -1,15 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>首页</title>
-</head>
-<body>
-    <h1>欢迎来到<span style="color:red;">首页</span> </h1>
-    <h2>解析name {{ name }}</h2>
-    <h2>解析age  {{ age }}</h2>
-    {% if sex %}
-        <h2>解析sex {{ sex }}</h2>
-    {% endif %}
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}
+Flask--首页
+{% endblock %}
+
+
+{% block main %}
+<div class="container">
+	<div class="list-group">
+		{% for a in articles %}
+		{% if a == articles|first %}
+		<a href="/{{ a.id }}" class="list-group-item active">
+			{{ a.chapter }}
+		</a>
+		{% else %}
+		<a href="/{{ a.id }}" class="list-group-item">
+			{{ a.chapter }}
+		</a>
+		{% endif %}
+		{% endfor %}
+		
+	</div>
+</div>
+
+
+{% endblock %}

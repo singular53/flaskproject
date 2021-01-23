@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Flask--注册
+{% endblock %}
+
+
+{% block main %}
+<div class="container">
+	<form class="form-horizontal" action="{{ url_for('regist') }}" method="post">
+		<div class="form-group">
+		  {% for e in get_flashed_messages() %}
+				{{ e }}
+		  {% endfor %}
+		</div>
+	  <div class="form-group">
+	    <label for="inputEmail3" class="col-sm-2 control-label">邮箱：</label>
+	    <div class="col-sm-10">
+	      <input required type="email" name='email' class="form-control" id="inputEmail3" placeholder="请输入邮箱">
+	    </div>
+	  </div>
+	  <div class="form-group">
+	    <label for="inputPassword3" class="col-sm-2 control-label">密码：</label>
+	    <div class="col-sm-10">
+	      <input required type="password" name='password' class="form-control" id="inputPassword3" placeholder="请输入密码">
+	    </div>
+	  </div>
+	  <div class="form-group">
+	    <label for="inputPassword4" class="col-sm-2 control-label">确认密码：</label>
+	    <div class="col-sm-10">
+	      <input required type="password2"  name='password2' class="form-control" id="inputPassword4" placeholder="请输入重复密码">
+	    </div>
+	  </div>
+	  <div class="form-group">
+	    <div class="col-sm-offset-2 col-sm-10">
+	      <button type="submit" class="btn btn-default">注册</button>
+	    </div>
+	  </div>
+	</form>
+</div>
+
+
+{% endblock %}

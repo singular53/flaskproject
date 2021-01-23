@@ -7,7 +7,7 @@ Flask--登录
 
 {% block main %}
 <div class="container">
-	<form class="form-horizontal" action="{{ url_for('login') }}" method="post">
+	<form class="form-horizontal" action="{{ url_for('user.login') }}" method="post">
 		<div class="form-group">
 		 {% for e in get_flashed_messages() %}
 			{{ e }}

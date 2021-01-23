@@ -7,7 +7,7 @@ Flask--注册
 
 {% block main %}
 <div class="container">
-	<form class="form-horizontal" action="{{ url_for('regist') }}" method="post">
+	<form class="form-horizontal" action="{{ url_for('user.regist') }}" method="post">
 		<div class="form-group">
 		  {% for e in get_flashed_messages() %}
 				{{ e }}
